@@ -1,0 +1,193 @@
+body {
+	background: #efefef;
+}
+#top-banner {
+	margin-bottom: 0;
+	background: url("../img/backgrounds/header-bg.jpg");
+	background-size: 210px 210px;
+	background-position: center;
+	padding: 1.5rem;
+}
+
+#logo-slogan-wrapper {
+	background: #fff;
+	display: inline-block;
+	padding: 20px 30px;
+	border-radius: 4px;
+	border: dashed 1px #c1c1c1; 
+}
+
+#top-navbar {
+	/*line-height: 2;*/
+	justify-content: unset;
+}
+
+#search-box {
+	width: calc(100% - 57px);
+	max-width: 325px;
+	margin-left: 17px;
+}
+
+#left-side-bar {
+	z-index: 1000;
+	top: 75px;
+	/*background: #fff;*/
+}
+
+.left-side-bar-group {
+	background: #fff;
+	padding: 15px;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+
+#cuisine-filter-items {
+	/*padding-left: 4px;*/
+	max-height: 95px;
+	overflow: hidden;
+}
+
+.sort-item.selected {
+	font-weight: bold;
+}
+
+.sort-item-value {
+	color: #89959b;
+}
+
+.sort-item.selected .sort-item-param {
+	color: #007bff;
+}
+
+.restaurant-entry {
+	background: #fff;
+	padding: 15px 0;
+	margin-top: 20px;
+	border: solid 1px #e3e3e3;
+	border-radius: 4px;
+	border-bottom-width: 4px;
+	display: none;
+}
+
+.restaurant-entry.cuisine-match.search-match {
+	display: flex;
+}
+
+.restaurant-img {
+	background: url("../img/backgrounds/restaurant-bg.jpg");
+	background-size: 100px 100px;
+	background-position: center;
+	height: 100%;
+	min-height: 161px;
+	border-radius: 4px;
+}
+
+.cost-for-two {
+	display: none;
+}
+.default.cost-for-two {
+	display: inline;
+}
+
+.restaurant-rating {
+	background: grey;
+	padding: 2px 8px;
+	border-radius: 6px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.restaurant-votes {
+	color: #89959b;
+	font-size: 14px;
+}
+
+.restaurant-score-value {
+	text-align: right;
+	margin-top: 15px;
+}
+
+.restaurant-parameter-name {
+	font-size: 14px;
+	color: #89959b;
+}
+
+.restaurant-parameter-value {
+	font-size: 14px;
+}
+
+.restaurant-action {
+	margin-top: 10px;
+}
+
+.restaurant-action .fa {
+	margin-right: 10px;
+}
+.restaurant-details {
+	margin-top: 5px;
+}
+
+
+.book-table-link, .order-link {
+	background: #d1d7dc;
+	border: solid 1px #d1d7dc;
+	margin-right: 4px;
+	transition: all 0.4s;
+	margin-top: 10px;
+	font-size: 15px;
+	pointer-events: none;
+}
+.book-table-link.active, .order-link.active {
+	background: #fff;
+	pointer-events: auto;
+}
+.book-table-link.active:hover, .order-link.active:hover {
+	border: solid 1px #007bff;
+	background: #007bff;
+	color: #fff;
+}
+.btn:focus, .form-control:focus {
+	box-shadow: none;
+}
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: none;
+}
+
+[title="Average"], [data-original-title="Average"] {
+	background: orange;
+}
+
+[title="Excellent"], [data-original-title="Excellent"] {
+	background: darkgreen;
+}
+
+[title="Good"], [data-original-title="Good"] {
+	background: gold;
+}
+
+[title="Not rated"], [data-original-title="Not rated"] {
+	background: white;
+	color: #212529;
+	border: solid 1px #d1d7dc;
+}
+
+[title="Very Good"], [data-original-title="Very Good"] {
+	background: green;
+}
+
+#footer {
+	background: #636363;
+	color: #fff;
+	padding: 10px;
+	margin-top: 30px;
+	font-size: 14px;
+}
+
+#footer a {
+	text-decoration: none;
+	color: cyan;
+}
+
+#content {
+	min-height: 1040px;
+}

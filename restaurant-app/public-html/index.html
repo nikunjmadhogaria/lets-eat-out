@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Restaurant Finder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script src="data/restaurants-data.js"></script>
+    <script src="data/currency-conversion.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div id="top-banner" class="jumbotron text-center">
+        <div id="logo-slogan-wrapper">
+            <h1>Restaurant Finder</h1>
+            <p>Find Restaurants On The Go!</p>
+        </div>
+    </div>
+    <nav id="top-navbar" class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
+        <a href="#">
+          <img src="img/logos/icon-small-light.png">
+        </a>
+        <input type="text" id="search-box" class="form-control" placeholder="Search by restaurant name">
+    </nav>
+    <div id="content" class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div id="left-side-bar" class="sticky-top">
+                    <div class="left-side-bar-group">
+                        <h5 class="left-side-bar-heading">Convert to Currency</h5>
+                        <select class="form-control" id="selected-currency">
+                            <option value="default">Don't convert</option>
+                            <option value="P">Botswana Pula (P)</option>
+                            <option value="R$">Brazilian Real (R$)</option>
+                            <option value="$">Dollar ($)</option>
+                        </select>
+                    </div>
+                    <div class="left-side-bar-group">
+                        <h5 class="left-side-bar-heading">Filter by</h5>
+                        <h6 class="left-side-bar-sub-heading">Cuisine</h6>
+                        <div id="cuisine-filter-items">
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="american" class="custom-control-input">
+                                <label class="custom-control-label" for="american">American</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="arabian" class="custom-control-input">
+                                <label class="custom-control-label" for="arabian">Arabian</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="asian" class="custom-control-input">
+                                <label class="custom-control-label" for="asian">Asian</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="bbq" class="custom-control-input">
+                                <label class="custom-control-label" for="bbq">BBQ</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="bakery" class="custom-control-input">
+                                <label class="custom-control-label" for="bakery">Bakery</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="bar-food" class="custom-control-input">
+                                <label class="custom-control-label" for="bar-food">Bar Food</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="beverages" class="custom-control-input">
+                                <label class="custom-control-label" for="beverages">Beverages</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="brazilian" class="custom-control-input">
+                                <label class="custom-control-label" for="brazilian">Brazilian</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="burger" class="custom-control-input">
+                                <label class="custom-control-label" for="burger">Burger</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="cafe" class="custom-control-input">
+                                <label class="custom-control-label" for="cafe">Cafe</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="chinese" class="custom-control-input">
+                                <label class="custom-control-label" for="chinese">Chinese</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="coffee-and-tea" class="custom-control-input">
+                                <label class="custom-control-label" for="coffee-and-tea">Coffee and Tea</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="desserts" class="custom-control-input">
+                                <label class="custom-control-label" for="desserts">Desserts</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="european" class="custom-control-input">
+                                <label class="custom-control-label" for="european">European</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="fast-food" class="custom-control-input">
+                                <label class="custom-control-label" for="fast-food">Fast Food</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="filipino" class="custom-control-input">
+                                <label class="custom-control-label" for="filipino">Filipino</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="french" class="custom-control-input">
+                                <label class="custom-control-label" for="french">French</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="gourmet-fast-food" class="custom-control-input">
+                                <label class="custom-control-label" for="gourmet-fast-food">Gourmet Fast Food</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="grill" class="custom-control-input">
+                                <label class="custom-control-label" for="grill">Grill</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="healthy-food" class="custom-control-input">
+                                <label class="custom-control-label" for="healthy-food">Healthy Food</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="ice-cream" class="custom-control-input">
+                                <label class="custom-control-label" for="ice-cream">Ice Cream</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="indian" class="custom-control-input">
+                                <label class="custom-control-label" for="indian">Indian</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="international" class="custom-control-input">
+                                <label class="custom-control-label" for="international">International</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="italian" class="custom-control-input">
+                                <label class="custom-control-label" for="italian">Italian</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="japanese" class="custom-control-input">
+                                <label class="custom-control-label" for="japanese">Japanese</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="juices" class="custom-control-input">
+                                <label class="custom-control-label" for="juices">Juices</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="korean" class="custom-control-input">
+                                <label class="custom-control-label" for="korean">Korean</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="latin-american" class="custom-control-input">
+                                <label class="custom-control-label" for="latin-american">Latin American</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="lebanese" class="custom-control-input">
+                                <label class="custom-control-label" for="lebanese">Lebanese</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="mediterranean" class="custom-control-input">
+                                <label class="custom-control-label" for="mediterranean">Mediterranean</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="mexican" class="custom-control-input">
+                                <label class="custom-control-label" for="mexican">Mexican</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="mineira" class="custom-control-input">
+                                <label class="custom-control-label" for="mineira">Mineira</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="north-eastern" class="custom-control-input">
+                                <label class="custom-control-label" for="north-eastern">North Eastern</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="peruvian" class="custom-control-input">
+                                <label class="custom-control-label" for="peruvian">Peruvian</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="pizza" class="custom-control-input">
+                                <label class="custom-control-label" for="pizza">Pizza</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="sandwich" class="custom-control-input">
+                                <label class="custom-control-label" for="sandwich">Sandwich</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="seafood" class="custom-control-input">
+                                <label class="custom-control-label" for="seafood">Seafood</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="steak" class="custom-control-input">
+                                <label class="custom-control-label" for="steak">Steak</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="sushi" class="custom-control-input">
+                                <label class="custom-control-label" for="sushi">Sushi</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="tapas" class="custom-control-input">
+                                <label class="custom-control-label" for="tapas">Tapas</label>
+                            </div>
+                            <div class="selection-filter custom-control custom-checkbox">
+                                <input type="checkbox" id="vegetarian" class="custom-control-input">
+                                <label class="custom-control-label" for="vegetarian">Vegetarian</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-side-bar-group">
+                        <h5 class="left-side-bar-heading">Sort by</h5>
+                        <div id="sort-by-items">
+                            <div class="sort-item custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="sort-by" id="rating-hl" value="Aggregate rating;high to low">
+                                <label class="custom-control-label" for="rating-hl">
+                                    <span class="sort-item-param">Rating</span>
+                                    <span class="sort-item-value"> - high to low</span>
+                                </label>
+                            </div>
+                            <div class="sort-item custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="sort-by" id="votes-hl" value="Votes;high to low">
+                                <label class="custom-control-label" for="votes-hl">
+                                    <span class="sort-item-param">Votes</span>
+                                    <span class="sort-item-value"> - high to low</span>
+                                </label>
+                            </div>
+                            <div class="sort-item custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="sort-by" id="cost-hl" value="Normalized Currency;high to low">
+                                <label class="custom-control-label" for="cost-hl">
+                                    <span class="sort-item-param">Cost</span>
+                                    <span class="sort-item-value"> - high to low</span>
+                                </label>
+                            </div>
+                            <div class="sort-item custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="sort-by" id="cost-lh" value="Normalized Currency;low to high">
+                                <label class="custom-control-label" for="cost-lh">
+                                    <span class="sort-item-param">Cost</span>
+                                    <span class="sort-item-value"> - low to high</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div id="restaurant-list" class="container">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="text-center">
+      Developed by <a href="https://www.linkedin.com/in/nikunjmadhogaria/" target="_blank">Nikunj Madhogaria</a><br>
+      ( <i class="fa fa-envelope" aria-hidden="true"></i> nikunjmadhogaria@gmail.com, <i class="fa fa-phone" aria-hidden="true"></i> +91-8093871393 )
+    </div>
+</body>
+
+</html>
