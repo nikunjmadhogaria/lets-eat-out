@@ -1,7 +1,7 @@
 # lets-eat-out
 A pseudo front-end interactive responsive application to find best places to eat.
 
-[**View Live Project**](https://docs.docker.com/get-docker/)
+[**View Live Project**](https://nikunjmadhogaria.github.io/lets-eat-out/restaurant-app/public-html/)
 
 
 ### Desktop Screenshots
