@@ -1,24 +1,8 @@
 # lets-eat-out
 A pseudo front-end interactive responsive application to find best places to eat.
 
+[**View Live Project**](https://docs.docker.com/get-docker/)
 
-### Prerequisities
-
-
-In order to run this container you'll need docker installed.
-
-[**Get Docker**](https://docs.docker.com/get-docker/)
-
-
-### Usage
-
-To start the container, just run the below command on command line:
-```shell
-docker run -dit --name lets-eat-out-instance -p 8080:80 nikunjmadhogaria/lets-eat-out
-```
-
-
-Once the container has started, you should be able to view the application on [**http://localhost:8080**](http://localhost:8080) on your browser.
 
 ### Desktop Screenshots
 
@@ -43,6 +27,25 @@ Once the container has started, you should be able to view the application on [*
 ![Tablet Screenshot 2](https://i.imgur.com/8qvly6K.png)
 
 ![Tablet Screenshot 3](https://i.imgur.com/ocZb5cv.png)
+
+
+### How to run the project using Docker?
+
+
+In order to run this container you'll need docker installed.
+
+[**Get Docker**](https://docs.docker.com/get-docker/)
+
+
+### Usage
+
+To start the container, just run the below command on command line:
+```shell
+docker run -dit --name lets-eat-out-instance -p 8080:80 nikunjmadhogaria/lets-eat-out
+```
+
+
+Once the container has started, you should be able to view the application on [**http://localhost:8080**](http://localhost:8080) on your browser.
 
 
 ## Author details
